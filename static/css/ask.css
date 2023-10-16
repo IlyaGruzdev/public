@@ -1,0 +1,16 @@
+
+.ask_form
+{
+  margin:60px;
+}
+.ask_btn
+{
+  width: 100px;
+  height: 50px;
+  color:black;
+}
+:hover.ask_btn
+{
+ background-color: bisque;
+  
+}

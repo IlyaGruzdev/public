@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="./static/css/bootstrap/bootstrap.css">
   <link rel="stylesheet" href="./static/css/base.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/question.css">
   <title>Document</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
           </li>
           
           <li class="nav-item dropdown">
@@ -41,9 +41,10 @@
        
         <form class="d-flex nav-btn" role="search">
 
-           <button class="btn btn-info nav-btn" type="submit">
-               Ask
-           </button>
+          <a href="./ask.html" class="nav-link"><button type="button" class="btn btn-info">
+            Ask
+          </button>
+          </a>     
         
           <input class="form-control me-2 nav-btn" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success nav-btn" type="submit">Search</button>
@@ -90,7 +91,7 @@
      <div class="col-8">
       <div class="row question">      
         <div class="col-3">
-          <h4 id="scrollspyHeading1">User Name</h4>
+          <h4 >User Name</h4>
           <img src="./static/img/avatar1.jpeg" alt="avatar" class="question_avatar" >
             <div style="display: flex;">
               <div style="margin-right: 20px;">
@@ -101,7 +102,7 @@
                     <span class="visually-hidden"></span>
                   </span>
                 </a>
-                <h3>Likes</h3>
+                <h4>Likes</h4>
               </div>
              
              <div>
@@ -112,11 +113,11 @@
                   <span class="visually-hidden"></span>
                 </span>
               </a>
-              <h3>Reposts</h3>
+              <h4>Reposts</h4>
              </div>
             </div>
             <div class="questions_tags">
-              <h3>Tags</h3>
+              <h4>Tags</h4>
               <a class="badge bg-primary text-wrap" style="font-size: large;margin-bottom: 10px;">
                Development
               </a>
@@ -130,8 +131,8 @@
      </div>
    
      <div class="col-7">
-      <h1 id="question1">Title of question1</h1>
-              <div class="">
+      <h1>Title of question1</h1>
+              <div>
 
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                  Non, iusto. Iste reiciendis vitae quam! 
@@ -158,28 +159,134 @@
                          reprehenderit excepturi repudiandae nam, fugit sapiente similique 
                 maiores cupiditate quos perferendis repellat, rerum aspernatur ad pariatur eum, unde voluptas quisquam voluptatum.
               </div>
-              <hr class="border-secondary-subtle border-4 opacity-100">     
-      <div class="card col-5" style="margin-top: 20px;">
-        <h5 class="card-title">Vasiliy Pypkin</h5>
-        <img src="./static/img/avatar3.jpeg" class="card-img-top" alt="..." >
-        <div class="card-body">
-         
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-          <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
-        </div>
-      </div>
-      <div class="questions_answers">
-        <div class="card" style="">
-          <h5 class="card-title">Vasiliy Pypkin</h5>
-          <img src="./static/img/avatar2.jpeg" class="card-img-top" alt="..." >
-          <div class="card-body">
-           
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, facilis ab hic animi saepe sequi quasi dolorum harum reiciendis voluptas similique, nihil voluptates, amet atque distinctio adipisci. In, minus expedita.</p>
-            <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
-          </div>
-        </div>
-      </div>
+              
+      
     </div>
+</div>
+<hr class="border-secondary-subtle border-4 opacity-100">   
+<div class="row question">      
+  <div class="col-3">
+    <h4 >Vasiliy Pypkin</h4>
+    <img src="./static/img/avatar3.jpeg" alt="avatar" class="question_avatar" >
+      <div style="display: flex;">
+        <div style="margin-right: 20px;">
+          <a class="position-relative" >
+            <img src="./static/img/like.png" width="40px" height="40px">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              6
+              <span class="visually-hidden"></span>
+            </span>
+          </a>
+          <h4>Likes</h4>
+        </div>
+       
+       <div>
+        <a class="position-relative" >
+          <img src="./static/img/repost.png" width="40px" height="40px">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            2
+            <span class="visually-hidden"></span>
+          </span>
+        </a>
+        <h4>Reposts</h4>
+       </div>
+      </div>
+</div>
+
+<div class="col-7">
+<h1 id="question1">Title of answer1</h1>
+        <div>
+
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+           Non, iusto. Iste reiciendis vitae quam! 
+           Exercitationem quaerat doloremque voluptates eveniet quo quos nemo ducimus, voluptatum,
+            adipisci quidem rerum. Dolorum assumenda similique ad consectetur molestiae sint, eos ipsum 
+            itaque alias in praesentium eligendi, officiis sed! Modi totam, optio vero facilis commodi obcaecati ab,
+             quibusdam eius corrupti vitae accusamus reprehenderit sapiente sunt placeat nostrum eligendi enim labore 
+             nihil doloremque saepe consequatur illo? Pariatur, minima voluptatem repudiandae nemo quae fugit veniam 
+             accusantium ex commodi ullam enim earum dolor totam aspernatur corrupti libero quos minus vero reprehenderit id.
+              Officia porro recusandae quia magni numquam accusantium saepe sit, aliquid eveniet quasi, in optio mollitia doloribus 
+        </div>
+          <div>
+            <div class="form-check form-select-lg">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Correct answer
+              </label>
+            </div>
+          </div>
+</div>
+</div>
+<div class="row question">      
+  <div class="col-3">
+    <h4 >Vasiliy Pypkin</h4>
+    <img src="./static/img/avatar2.jpeg" alt="avatar" class="question_avatar" >
+      <div style="display: flex;">
+        <div style="margin-right: 20px;">
+          <a class="position-relative" >
+            <img src="./static/img/like.png" width="40px" height="40px">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              6
+              <span class="visually-hidden"></span>
+            </span>
+          </a>
+          <h4>Likes</h4>
+        </div>
+       
+       <div>
+        <a class="position-relative" >
+          <img src="./static/img/repost.png" width="40px" height="40px">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            2
+            <span class="visually-hidden"></span>
+          </span>
+        </a>
+        <h4>Reposts</h4>
+       </div>
+      </div>
+</div>
+
+<div class="col-7">
+<h1 id="question1">Title of answer1</h1>
+        <div>
+
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+           Non, iusto. Iste reiciendis vitae quam! 
+           Exercitationem quaerat doloremque voluptates eveniet quo quos nemo ducimus, voluptatum,
+            adipisci quidem rerum. Dolorum assumenda similique ad consectetur molestiae sint, eos ipsum 
+            itaque alias in praesentium eligendi, officiis sed! Modi totam, optio vero facilis commodi obcaecati ab,
+             quibusdam eius corrupti vitae accusamus reprehenderit sapiente sunt placeat nostrum eligendi enim labore 
+             nihil doloremque saepe consequatur illo? Pariatur, minima voluptatem repudiandae nemo quae fugit veniam 
+             accusantium ex commodi ullam enim earum dolor totam aspernatur corrupti libero quos minus vero reprehenderit id.
+              Officia porro recusandae quia magni numquam accusantium saepe sit, aliquid eveniet quasi, in optio mollitia doloribus 
+        </div>
+          <div>
+            <div class="form-check form-select-lg">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Correct answer
+              </label>
+            </div>
+          </div>
+</div>
+<div class="mb-5 row mt-3">
+  <label for="input" class="col-sm-2 col-form-label"><h3>Text</h3></label>
+  <div class="col-sm-9">
+  <textarea name="area" placeholder="Write text for you answer" rows="8" class="text-bg-light form-control form-control-lg border-2 border-black"></textarea>
+  </div>
+  
+</div>
+<div class="row">
+
+  <div class="col-sm-2">
+  </div>
+  <div class="col-sm-9" >
+    <button class="btn-lg ask_btn" >
+      Answer
+  </button>
+  </div>
+  
+</div>
 </div>
 </div>
 
@@ -247,8 +354,8 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, iure fugit iusto 
             </div>
             <div class="m-lg-2">
-              <button type="button" class="btn btn-secondary btn-lg">Register</button>
-              </button>
+              <a href="./register.html"><button type="button" class="btn btn-secondary btn-lg">Register</button></a>
+             
             </div>
            </div>
            

@@ -27,3 +27,14 @@
   float:right;
   margin-bottom: 20px;
 }
+.ask_btn
+{
+  width: 100px;
+  height: 50px;
+  color:black;
+}
+:hover.ask_btn
+{
+ background-color: bisque;
+  
+}

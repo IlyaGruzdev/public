@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +63,7 @@
 
                 <div class="col-6">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./settings.html">Settings</a>
+                    <a class="nav-link active" aria-current="page" href="#">Settings</a>
                   </li>    
                 </div> 
                 <div class="col-6">
@@ -87,8 +88,66 @@
   <div class="conteiner">
     <div class="row tags_members_wrap">
      <div class="col-8">
+        <h2>Settings</h2>
+        <br \>
 
-     </div>
+        <div class="row m-4">
+          <form class="row g-3">
+          <div class="row mb-4">
+            
+            <div class="col-sm-2">
+              <label class="col-form-label" id="validationDefault01">Login</label>
+            </div>
+            <div class="col-sm-6">
+              <input type="text"  class="form-control" minlength="5"  maxlength="30" required>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-sm-2">
+              <label class="col-form-label">Email</label>
+            </div>
+            <div class="col-sm-4">
+              <input type="email" class="form-control" placeholder="Recipient's username" id="validationDefaul" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+            </div>
+              <div class="col-sm-2"> 
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+              </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-sm-2">
+              <label class="col-form-label">NickName</label>
+            </div>
+            <div class="col-sm-6">
+              <input type="text"  class="form-control" maxlength="30" id="validationDefaultUsername" required>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-sm-2">
+              <label class="col-form-label">Avatar</label>
+            </div>
+            <div class="col-sm-4">
+              <div class="img-fluid mb-4">
+                <img src="./static/img/avatar3.jpeg" style="max-width: 100%;">
+              </div>
+              
+              <div class="input-group mb-3">
+                <input type="file" class="form-control" id="inputGroupFile02">
+                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+              </div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+              <button type="submit" class="btn btn-lg btn-warning">Save</button>
+            </div>   
+          </div>
+          </form>
+          </div>   
+ 
+      </div>
      <div class="col-4">
       <div class="tags_members">
 

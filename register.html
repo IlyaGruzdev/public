@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +45,6 @@
             Ask
           </button>
           </a>     
-        
           <input class="form-control me-2 nav-btn" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success nav-btn" type="submit">Search</button>
         </form>
@@ -62,7 +63,7 @@
 
                 <div class="col-6">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./settings.html">Settings</a>
+                    <a class="nav-link active" aria-current="page" href="#">Settings</a>
                   </li>    
                 </div> 
                 <div class="col-6">
@@ -87,8 +88,89 @@
   <div class="conteiner">
     <div class="row tags_members_wrap">
      <div class="col-8">
+      <div class="m-2">
+        <h2>Registration</h2>
+        <br \>
+        <div class="row">
+          <div class="alert alert-danger" style="display: inline-block;">
+            Sorry, wrong password!
+          </div>
+          <form class="row g-3" oninput='up2.setCustomValidity(up2.value != up.value ? "Passwords do not match." : "")'>
+          <div class="row mb-4">
+            <div class="col-sm-2">
+              <label class="col-form-label">Login</label>
+            </div>
+            <div class="col-sm-6">
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">@</span>
+                <input type="text" id="validationServer01" class="form-control" minlength="5"  maxlength="30" required>
+              </div>
+             
+            </div>
+          </div>
 
-     </div>
+          <div class="row mb-4">
+            <div class="col-sm-2">
+              <label class="col-form-label">Email</label>
+            </div>
+            <div class="col-sm-4">     
+              <input type="email" id="validationServer01" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+            </div>
+              <div class="col-sm-2"> 
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+              </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-sm-2">
+              <label class="col-form-label">NickName</label>
+            </div>
+            <div class="col-sm-6">
+              <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping">@</span>
+              <input type="text" id="validationDefaultUsername" class="form-control" maxlength="30" required>
+            </div>
+            </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-sm-2">
+                <label class="col-form-label">Password</label>
+              </div>
+              <div class="col-sm-6"> 
+                <input type="password" id="validationDefaultUsername" class="form-control" maxlength="30" required name="up">
+              </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-sm-2">
+              <label class="col-form-label">Password confirmation</label>
+            </div>
+            <div class="col-sm-6"> 
+              <input type="password" id="validationDefaultUsername" class="form-control" maxlength="30" required name="up2">
+            </div>
+        </div>
+          <div class="row mb-4">
+            <div class="col-sm-2">
+              <label class="col-form-label">Upload avatar</label>
+            </div>
+            <div class="col-sm-4">
+
+              <div class="input-group mb-3">
+                <input type="file" class="form-control" id="inputGroupFile02">
+                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+              </div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+              <button type="submit" class="btn btn-lg btn-warning">Register</button>
+            </div>   
+          </div>
+        </form>
+          </div>   
+        </div>
+      </div>
      <div class="col-4">
       <div class="tags_members">
 
@@ -154,7 +236,7 @@
             </div>
             <div class="m-lg-2">
               <a href="./register.html"><button type="button" class="btn btn-secondary btn-lg">Register</button></a>
-              </button>
+              
             </div>
            </div>
            
