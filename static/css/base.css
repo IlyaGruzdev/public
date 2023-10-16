@@ -1,0 +1,80 @@
+section
+{
+  border:solid red 1px;
+  padding: 50px;
+}
+.base_avatar
+{
+  padding:10px;
+  border-radius: 50%;
+  max-width: 80px;
+  max-height: 80px;
+}
+.nav-item.nav-btn
+{
+  margin-left: 20px;
+
+}
+.tags
+{
+  padding-right: 80px;
+}
+.tags_members_wrap
+{
+  margin:60px;
+}
+.tags_head
+{
+  display: inline-block;
+  padding-left: 0px;
+
+}
+.tags_text
+{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  font-size:x-large;
+  font-style: normal;
+  font-style: bisque;
+}
+.members
+{
+  margin-top: 30px;
+
+}
+.tags_members
+{
+  max-width: 80%;
+
+}
+.members_content
+{
+  max-width: 100px;
+  display:inline-block;
+  justify-content: space-around;
+  font-size: 24px;
+}
+a {
+  text-decoration: none;
+  color: #0f7afc;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(15, 122, 252, 0.2);
+}
+a:hover {
+  text-decoration: none;
+  color: #cf0000;
+  border-bottom-color: rgba(208, 64, 0, 0.2);
+}
+a:visited {
+  text-decoration: none;
+  color: #800080;
+  border-bottom-color: rgba(128, 0, 128, 0.2);
+}
+footer
+{
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.852);
+  opacity: 90%;
+  height: max-content;
+  width: 100%;
+}
