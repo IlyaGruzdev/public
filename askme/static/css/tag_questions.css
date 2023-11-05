@@ -1,0 +1,29 @@
+
+.question_avatar
+{
+  border-radius: 50%;
+  max-width: 70%;
+  display: block;
+  margin-bottom: 15px;
+
+}
+.question_text
+{
+  font-size: medium;
+}
+.question
+{
+  min-width: 100%;
+  
+}
+.questions_tags
+{
+
+  margin-top: 15px;
+  width: 100%;
+}
+.question_answers
+{
+  float:right;
+  margin-bottom: 20px;
+}
