@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
-
+from .models import Profile
 
 def index(request):
   page=request.GET.get('page',1)
