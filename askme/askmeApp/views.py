@@ -9,7 +9,7 @@ def index(request):
 def ask(request):
   return render(request,'ask.html')
 
-def questions(request):
+def questions(request, question_id):
   return render(request,'question.html')
 
 def register(request):

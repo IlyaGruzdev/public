@@ -26,13 +26,14 @@ class Answer(models.Model):
   public_date=models.DateTimeField(auto_now=True)
   tags=models.ManyToManyField('Tag', related_name='answers')
   user=models.ForeignKey('Profile',null=True, blank=True, on_delete=models.SET_NULL)
-  question=models.ForeignKey('Question',null=True, on_delete=models.CASCADE)
+  question=models.ForeignKey('Question', null=True, blank=True, on_delete=models.CASCADE)
 
-class Profile(User):
+class Profile(models.Model):
   user_id=models.BigIntegerField(unique=True, primary_key=True)
-  avatar=models.ImageField(null=True, blank=True, upload_to=get_upload_path)
+  avatar=models.ImageField(null=True, blank=True, upload_to=get_upload_path, default='uploads/no_avatar.jpg')
   age = models.PositiveIntegerField(validators=[MaxValueValidator(110)])
   birth_date=models.DateField(null=True, blank=True)
+  profile_user=models.OneToOneField(User,related_name='user', on_delete=models.CASCADE)
 
 class InstanceType(models.Model):
   type=models.PositiveIntegerField(validators=[MaxValueValidator(2)])
