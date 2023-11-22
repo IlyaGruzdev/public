@@ -1,38 +1,36 @@
 {%extends 'layouts/base.html'%}
-{% block content %}
 {% load static %}
+{% block content %}
 
 <link rel="stylesheet" href="{% static '/css/index.css' %}">
+<link rel="stylesheet" href="{% static '/css/question_component.css' %}">
+
     <div class="row tags_members_wrap">
      <div class="col-8">
+      {% block tag_questions %}
       <h1>Questions</h1>
-
+      {% endblock %}
    {% include 'components/navigation_of_questions.html'%}
       <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-        <hr class="border-secondary-subtle border-3 opacity-75">     
-        <div class="row question">
+        <hr class="border-secondary-subtle border-3 opacity-75">   
+          {% if questions %}
           {% for question in questions %}
+          <div class="row question">
           {% include 'components/question.html'%}
-          
+        </div>
           <div class="row">
-            <a class="" style="font-size: 24px;margin-bottom: 10px;border:none">
-              Answers({{answers|length}})
+            <a class="question_answers" style="font-size: 24px;margin-bottom: 10px;border:none"  onclick="questionAnswersDisp()">
+              Answers({{question.answer_set.all|length}})
             </a>
-            {%for answer in answers %}
+            {%for answer in question.answer_set.all %}
             {% include 'components/question_answer.html' %}
             {% endfor %} 
           </div> 
           <hr class="border-secondary-subtle border-3 opacity-75">    
           {% endfor %}
-        </div>
-      
-     
-    
+        {% endif %} 
     </div>
     {% include 'components/pagination.html'%}
     </div>     
 
-
-  <script src="{%static '/js/bootstrap/bootstrap.bundle.js' %}"></script>
-  
 {% endblock %}

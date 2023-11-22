@@ -1,43 +1,14 @@
-{% extends 'layouts/base.html'%}
+{% extends 'index.html'%}
 {%load static%}
-{% block content%}
+{% block tag_questions%}
 
   <link rel="stylesheet" href="{% static '/css/tag_questions.css' %}">
-
-    <div class="row tags_members_wrap">
-     <div class="col-8">
-      <h1>Tag: 
-        <a class="badge bg-primary text-wrap" style="font-size: large;margin-bottom: 10px;">
-        C++
-      </a>
-    </h1>
-     {% include 'components/navigation_of_questions.html'%}
-
-      <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-        <hr class="border-secondary-subtle border-3 opacity-75">   
-        <div class="row question" id="question1">     
-      {% include 'components/question.html' %}
-        <div class="row">
-      <a class="" style="font-size: 24px;margin-bottom: 10px;border:none">
-        Answers(6)
-      </a>
-      {% include 'components/question_answer.html' %} 
-        </div> 
-      </div>
-    <hr class="border-secondary-subtle border-3 opacity-75">   
-    <div class="row question" id="question2">      
-      {% include 'components/question.html'%}
-    
-    <div class="row">
-      <a class="" style="font-size: 24px;margin-bottom: 10px;border:none">
-        Answers(6)
-      </a>
-      {% include 'components/question_answer.html' %} 
-    </div> 
-  </div> 
-</div>
-     {% include 'components/pagination.html' %}
-</div>    
-  <script src="{%static '/js/bootstrap/bootstrap.bundle.js' %}"></script>
-
-  {%endblock%}
+  <link rel="stylesheet" href="{% static '/css/question_component.css' %}">
+      
+  <h1>Tag: 
+    <a class="badge bg-primary text-wrap" style="font-size: large;margin-bottom: 10px;">
+    {{tag.name}}
+  </a>
+  </h1>
+ {% endblock %}
+     

@@ -1,0 +1,43 @@
+.question_avatar
+{
+  border-radius: 50%;
+  max-width: 50%;
+  display: block;
+  margin-bottom: 15px;
+
+}
+.question_text
+{
+  font-size: medium;
+  background-color: white;
+  height: 100%;
+  padding-top: 15px;
+  border-style:groove;
+  border-width: 5px;
+}
+.question_title
+{
+  margin-bottom: 30px;
+}
+.question
+{
+  min-width: 100%;
+  margin:30px;
+}
+.questions_tags
+{
+
+  margin-top: 15px;
+  width: 100%;
+}
+.question_answers
+{
+  float:right;
+  margin-bottom: 20px;
+}
+.question_title_text_wrap
+{
+  overflow: scroll; 
+  height: 100%;
+ 
+}

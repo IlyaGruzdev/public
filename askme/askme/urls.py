@@ -15,19 +15,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.conf.urls import static
-from django.urls import path
-from askme import settings           
+
+from django.conf.urls.static import static
+
+from django.urls import path, re_path
+from django.conf import *           
 from askmeApp import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', views.index, name="home"),
-    path('register/', views.register),
-    path('login/', views.login),
-    path('ask/',  views.ask),
-    path('questions/<int:question_id>',  views.questions),
-    path('tag/questions/',  views.tag_questions),
-    path('settings/', views.settings)
+    path('signup/', views.register, name="register"),
+    path('login/', views.login, name="login"),
+    path('ask/', views.ask, name="ask"),
+    path('question/<int:question_id>/', views.question, name="question"),
+    re_path(r'tag/(?P<name>[\w+ ./-]+)/', views.tag_questions, name="tag_questions"),
+    path('settings/', views.settings, name='settings'),
+    path('hot/', views.bestQuestions, name='hot')
 ]
 
 handler404 = views.pageNotFound

@@ -1,13 +1,71 @@
-{% include 'components/question.html' %}
-{%load static %}
+{% load static %}
 
-<div class="row">
-  <div class="col-3">
-  </div>
-  <div class="form-check form-select-lg col-7">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Correct answer
-    </label>
-  </div>
+<div class="col-3">
+  {% with user=answer.user%}
+  <h4 id="scrollspyHeading1"> {{user.profile_user.first_name}} </h4>
+  <img src="{{user.avatar.url}}" alt="avatar" class="question_avatar" >
+    <div style="display: flex;">
+      <div style="margin-right: 20px;">
+        <a class="position-relative" >
+          <img src="{%static '/img/like.png' %}" width="30px" height="30px">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            6
+            <span class="visually-hidden"></span>
+          </span>
+        </a>
+        <h4>Likes</h4>
+      </div>
+     
+     <div>
+      <a class="position-relative" >
+        <img src="{% static '/img/repost.png' %}" width="30px" height="30px">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          2
+          <span class="visually-hidden"></span>
+        </span>
+      </a>
+      <h4>Reposts</h4>
+     </div>
+    </div>
+    {%endwith%}
+    <div class="questions_tags">
+      <h3>Tags</h3>
+      {% for tag in answer.tags.all%}
+      <a class="badge bg-primary text-wrap" href="{% url 'tag_questions' tag.name %}" style="font-size: large;margin-bottom: 10px;">
+      {{tag.name}} 
+      </a>
+    {%endfor%}
+    </div>  
+   
 </div>
+
+<div class="col-7">
+   
+  <div class="row" style="height:100%; overflow:hidden">
+    <div  class ="row" style="display:flex;">
+      <div class="answer_title col-8">
+        <h1 id="answer{{answer.id}}">{{answer.title}}</h1>
+      </div>
+      <div class="col-4">
+      <div class="row" >
+        <div class="col-3">
+        </div>
+        <div class="form-check form-select-lg col-7">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-right:0px;">
+          <label class="form-check-label" for="flexCheckDefault">
+            Correct answer
+          </label>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="" style="height:100%;">
+      <div class="question_text">
+        {{answer.text}}
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+

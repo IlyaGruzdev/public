@@ -1,11 +1,16 @@
 <nav aria-label="Page navigation example" style="margin-top: 15px;">
   <ul class="pagination">
-   
-    <li class="page-item"><a class="page-link" href="?page={{page|add:"-1"}}">Previous</a></li>
-  
     <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
-    <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
-    <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
-    <li class="page-item"><a class="page-link" href="?page={{page|add:"1"}}">Next</a></li>
+    {% if questions.has_previous and questions.previous_page_number != 1 and questions.number != 1 %}
+    <li class="page-item"><a class="page-link" href="?page={{questions.number|add:"-1"}}">previous</a></li>
+    {% endif %}
+    {% if questions.number != 1 %}
+    <li class="page-item"><a class="page-link" href="?page={{questions.number}}">{{questions.number}}</a></li>
+    {% endif %}
+    {% if questions.has_next and questions.next_page_number != questions.paginator.num_pages %}
+    <li class="page-item"><a class="page-link" href="?page={{questions.number|add:1}}">next</a></li>
+    {% endif %}
+    <li class="page-item"><a class="page-link" href="?page={{questions.number}}">...</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{questions.paginator.num_pages}}">{{questions.paginator.num_pages}}</a></li>
   </ul>
 </nav>

@@ -1,52 +1,55 @@
 {% load static %}
+
 <div class="col-3">
-  <h4 id="scrollspyHeading1">User Name</h4>
-  <img src="{%static '/img/avatar1.jpeg' %}" alt="avatar" class="question_avatar" >
+  {% with user=question.user%}
+  <h4 id="scrollspyHeading1"> {{user.profile_user.first_name}} </h4>
+  <img src="{{user.avatar.url}}" alt="avatar" class="question_avatar" >
     <div style="display: flex;">
       <div style="margin-right: 20px;">
         <a class="position-relative" >
-          <img src="{%static '/img/like.png' %}" width="40px" height="40px">
+          <img src="{%static '/img/like.png' %}" width="30px" height="30px">
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             6
             <span class="visually-hidden"></span>
           </span>
         </a>
-        <h3>Likes</h3>
+        <h4>Likes</h4>
       </div>
      
      <div>
       <a class="position-relative" >
-        <img src="{% static '/img/repost.png' %}" width="40px" height="40px">
+        <img src="{% static '/img/repost.png' %}" width="30px" height="30px">
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           2
           <span class="visually-hidden"></span>
         </span>
       </a>
-      <h3>Reposts</h3>
+      <h4>Reposts</h4>
      </div>
     </div>
+    {%endwith%}
     <div class="questions_tags">
       <h3>Tags</h3>
-      <a class="badge bg-primary text-wrap" style="font-size: large;margin-bottom: 10px;">
-       Development
+      {% for tag in question.tags.all%}
+      <a class="badge bg-primary text-wrap" href="{% url 'tag_questions' tag.name %}" style="font-size: large;margin-bottom: 10px;">
+      {{tag.name}} 
       </a>
-      <a class="badge bg-primary text-wrap" style="font-size: large;margin-bottom: 10px;">
-        C++
-      </a>
-      <a class="badge bg-primary text-wrap" style="font-size: large;margin-bottom: 10px;">
-        Assembly
-      </a>
+    {%endfor%}
     </div>  
    
 </div>
 
-    
 <div class="col-7">
    
-    <div class="question_text">
-      <h1 id="question1">{{question.title}}</h1>
-
+    <div class="row" style="height:100%; overflow: hidden;">
+      <div class="question_title">
+      <a href="{% url 'question' question.id %}"><h1 id="question{{question.id}}">{{question.title}}</h1></a>
+      </div>
+      <div class="question_title_text_wrap">
+      <div class="question_text">
       {{question.text}}
+      </div>
+    </div>
     </div>
    
 </div>

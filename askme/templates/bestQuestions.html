@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<link rel="stylesheet" href="{% static '/css/question_component.css' %}">
+{% for question in questions %}
+
+{% include 'components/question.html'%}
+
+{% endfor %}
+
+{% endblock %}

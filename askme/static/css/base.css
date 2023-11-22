@@ -78,3 +78,13 @@ footer
   height: max-content;
   width: 100%;
 }
+body {
+  font-family: sans-serif;
+  background-color: #81d4fa;
+  font-weight: bold;
+}
+
+.text-box {
+  margin-left: 44vw;
+ margin-top: 42vh;
+}

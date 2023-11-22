@@ -1,14 +1,17 @@
 {% load static %}
 
 <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
-  <a class="navbar-brand" href="#">Navigation for questions</a>
+  <a class="navbar-brand" href="#">Navigation for answers</a>
   <ul class="nav nav-pills">
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>    
       <ul class="dropdown-menu">
-        {% for question in questions %}
         <li>
           <a class="dropdown-item" href="#question{{question.id}}">{{question.title}}</a>
+        </li>
+        {% for answer in question.answer_set.all %}
+        <li>
+          <a class="dropdown-item" href="#answer{{answer.id}}">{{answer.title}}</a>
         </li>
         {% endfor %}
       </ul>

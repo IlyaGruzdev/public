@@ -1,0 +1,50 @@
+{% load static %}
+
+<div class="conteiner">
+  <div class="row">
+    <div class="col-4" style="color: white;"> 
+      <div style="display: flex;">
+      <div>
+        Communicate with other people <br />
+      <a class="" href="#"><img src="{%static '/img/site_icon.png' %}" width="100px" height="100px"  alt=""></a>
+    </div>
+    <div class="">
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, iure fugit iusto 
+      </div>
+      <div class="m-lg-2">
+        <a href="{% url 'register' %}"><button type="button" class="btn btn-secondary btn-lg">Register</button></a>
+        </button>
+      </div>
+     </div>
+     
+    </div>
+      
+
+    </div>
+    <div class="col-4" style="color: white;">
+      <address>
+      <h3>You can contact author at</h3>
+      <a href="http://www.somedomain.com/contact">www.somedomain.com</a>.<br />
+      <a href="mailto:webmaster@somedomain.com">contact webmaster</a>
+      <hr class="border-secondary-subtle border-3 opacity-75">
+            You may also want to visit us:<br />
+            1981 Landings Drive<br />
+              Building K<br />
+            Mountain View, CA 94043-0801<br />
+              USA
+    </address>
+    </div>
+    <div class="col-4" style="color: white;">
+      <h4>
+        Our social media
+      
+      </h4>
+      <a><img class="link-info" src="{% static '/img/inst.png' %}" width="36" height="36"></a>
+      <a><img src="{% static  '/img/vk.png' %}" width="36" height="36"></a>
+      <a><img src="{% static '/img/whatsapp.png' %}" width="36" height="36"></a>
+      <a><img src="{% static '/img/tg.png' %}" width="36" height="36"></a>
+    </div>
+  </div>
+</div>
+</footer>
