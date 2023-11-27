@@ -1,9 +1,11 @@
 {%extends 'layouts/base.html'%}
 {% load static %}
-{% block content %}
+{% block login %}
 
 <link rel="stylesheet" href="{% static '/css/ask.css' %}">
- 
+{% include 'components/logoutnavbar.html' %}
+<div class="conteiner">
+  <div class="row">
     <div class="row tags_members_wrap">
      <div class="col-8">
       <div class="ask_form">
@@ -33,7 +35,7 @@
           <div class="col-sm-2">
           </div>
           <div class="col-sm-9" >
-            <button class="btn-lg ask_btn" style="border-radius: 10px;">
+            <button class="btn-lg ask_btn">
               Ask
           </button>
           </div>

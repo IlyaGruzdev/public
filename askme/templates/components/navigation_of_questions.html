@@ -1,18 +1,28 @@
 {% load static %}
 
+<link rel="stylesheet" href="{% static 'css/navigation.css'%}">
+
 <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
   <a class="navbar-brand" href="#">Navigation for questions</a>
   <ul class="nav nav-pills">
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>    
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false" onclick="myFunction()">
+        Search questions
+      </a>    
+      <div id="myDropdown" class="nav-link">
       <ul class="dropdown-menu">
+        <input type="text" class="dropdown-item" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
         {% for question in questions %}
         <li>
           <a class="dropdown-item" href="#question{{question.id}}">{{question.title}}</a>
         </li>
-        {% endfor %}
+        {% endfor %}   
       </ul>
-   
+    </div>
+      
     </li>
   </ul>
 </nav>
+
+<script src="{% static 'js/navigation.js'%}"></script>
+  

@@ -11,71 +11,73 @@
     <title>Document</title>
   </head>
 <body>
+  {%block login%}
 <header>  
   {% include 'components/navbar.html'%}
 </header>
 
 <div class="conteiner">
-<div class="row">
-{%block content%}
+  <div class="row">
+  {%block content%}
 
-{% endblock %}
-<div class="col-4">
-  <div class="tags_members">
+  {% endblock %}
+  {% endblock login%}
+    <div class="col-4">
+      <div class="tags_members">
 
-    <div class="tags">
-      <div class="tags_head">
-        <h1 class="text-dark-emphasis text-center">Popular Tags</h1>
+        <div class="tags">
+          <div class="tags_head">
+            <h1 class="text-dark-emphasis text-center">Popular Tags</h1>
+          </div>
+        
+          <div class="tags_text" >
+            <hr class="border-danger border-2 opacity-75">     
+            <a class="badge text-secondary-emphasis text-decoration-underline" href="#">C++</a>
+            <a class="badge bg-primary text-wrap" href="#"> TexnoPark</a>
+            <a class="badge text-danger-emphasis" href="#"> MySql</a>
+            <a class="badge text-wrap text-body-tertiary " href="#">Mail.ru</a>
+            <a class="badge text-bg-secondary" href="#"> Vk</a>
+            <a class="badge text-bg-light text-danger-emphasis text-decoration-underline" href="#"> Voloshin</a>
+            <a class="badge text-bg-info" href="#"> Python</a>
+            <a class="badge text-bg-success text-white-emphasis" href="#"> django</a>
+            <a class="badge text-bg-light" href="#"> Firefox</a>
+            <a class="badge text-light-emphasis text-decoration-underline" href="#"> Chrome</a>
+            <a class="badge text-bg-danger" href="#">Development</a>
+            <a class="badge text-bg-info" href="#"> Ruby On Rails</a>
+            <a class="badge text-bg-warning text-white-emphasis" href="#">Tcp/ip</a>
+            <a class="badge text-bg-light" href="#">Css</a>
+            <a class="badge text-bg-dark text-white" href="#">Java</a>
+            <a class="badge text-secondary-emphasis text-decoration-underline" href="#">Kotlin</a>
+          </div>
+          
+        </div>
+
+        <div class="members">
+          <h1>Best members</h1>
+          <div class="members_content">
+              <a href="#">  <span class="badge text-bg-warning text-white-emphasis">Ilya Gruzdev</span></a>
+          <a href="#"> <span class="badge text-bg-warning text-white-emphasis">DonaldTramp</span></a>
+          <a href="#"><span class="badge text-bg-warning text-white-emphasis">Voloshin</span></a>
+          <a href="#"><span class="badge text-bg-warning text-white-emphasis">Ivan Ivanov</span></a>
+          <a href="#"><span class="badge text-bg-warning text-white-emphasis">Vasily</span></a>
+          <a href="#"><span class="badge text-bg-warning text-white-emphasis">Rayan Gosling</span></a>
+          <a href="#"><span class="badge text-bg-warning text-white-emphasis">Dmitriy</span></a>
+          <a href="#"><span class="badge text-bg-warning text-white-emphasis">Alice</span></a>
+          </div>
+          
+        </div>
+      </div>  
+      <div class="hot_questions">
+        <a href="{% url 'hot' %}"> <span class="badge text-bg-info text-bg-dark text-white">Hot questions</span></a>
       </div>
-     
-      <div class="tags_text" >
-        <hr class="border-danger border-2 opacity-75">     
-        <a class="badge text-secondary-emphasis text-decoration-underline" href="#">C++</a>
-        <a class="badge bg-primary text-wrap" href="#"> TexnoPark</a>
-        <a class="text-danger-emphasis" href="#"> MySql</a>
-        <a class="badge text-wrap text-body-tertiary " href="#">Mail.ru</a>
-        <a class="badge text-bg-secondary" href="#"> Vk</a>
-        <a class="text-bg-light" href="#"> Voloshin</a>
-        <a class="badge text-bg-info" href="#"> Python</a>
-        <a class="badge text-bg-success text-white-emphasis" href="#"> django</a>
-        <a class="text-bg-light" href="#"> Firefox</a>
-        <a class="text-light-emphasis text-decoration-underline" href="#"> Chrome</a>
-        <a class="badge text-bg-danger" href="#">Development</a>
-        <a class="badge text-bg-info" href="#"> Ruby On Rails</a>
-        <a class="badge text-bg-warning text-white-emphasis" href="#">Tcp/ip</a>
-        <a class="text-bg-light" href="#">Css</a>
-        <a class="badge text-bg-dark text-white" href="#">Java</a>
-        <a class="badge text-secondary-emphasis text-decoration-underline" href="#">Kotlin</a>
-      </div>
-      
     </div>
-
-    <div class="members">
-      <h1>Best members</h1>
-      <div class="members_content">
-        <a href="#">  <span class="badge text-bg-warning text-white-emphasis">Ilya Gruzdev</span></a>
-     <a href="#"> <span class="badge text-bg-warning text-white-emphasis">DonaldTramp</span></a>
-     <a href="#"><span class="badge text-bg-warning text-white-emphasis">Voloshin</span></a>
-     <a href="#"><span class="badge text-bg-warning text-white-emphasis">Ivan Ivanov</span></a>
-     <a href="#"><span class="badge text-bg-warning text-white-emphasis">Vasily</span></a>
-     <a href="#"><span class="badge text-bg-warning text-white-emphasis">Rayan Gosling</span></a>
-     <a href="#"><span class="badge text-bg-warning text-white-emphasis">Dmitriy</span></a>
-     <a href="#"><span class="badge text-bg-warning text-white-emphasis">Alice</span></a>
-      </div>
-      
   </div>
-
-  </div>  
-
- </div>
-  </div>
-</div> 
-</div>
 </div>
 <footer id="footer">
-  
  {% include 'components/footer.html'%}
+</footer>
 </body>
 <script src="{%static '/js/bootstrap/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'js/question_answer.js'%}"></script>
 
 </html>

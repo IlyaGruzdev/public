@@ -1,42 +1,49 @@
 {%extends 'layouts/base.html'%}
 {% load static %}
-{% block content%}
+{% block login%}
 
 
 <link rel="stylesheet" href="{%static '/css/question.css' %}"> 
 <link rel="stylesheet" href="{%static '/css/question_component.css' %}">
+<link rel="stylesheet" href="{%static '/css/ask.css' %}"> 
 
-<div class="row tags_members_wrap">
- <div class="col-8">  
-  {% include 'components/navigation_of_answers.html'%}
-  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-    <div class="row question">     
-      {% include 'components/question.html' %}
-    </div>
-    <hr class="border-secondary-subtle border-3 opacity-75">  
-    {% for answer in question.answer_set.all%}
-    <div class="row question">  
-      {% include 'components/answer.html' %}
-    </div> 
-    {% endfor %}
-  </div>
-    <div class="mb-5 row mt-3">
-      <label for="input" class="col-sm-2 col-form-label"><h3>Text</h3></label>
-      <div class="col-sm-9">
-      <textarea name="area" placeholder="Write text for you answer" rows="8" class="text-bg-light form-control form-control-lg border-2 border-black"></textarea>
-      </div>     
-    </div>
-    <div class="row">
-      <div class="col-sm-2">
+  {% include 'components/logoutnavbar.html' %}
+<div class="conteiner">
+  <div class="row">
+    <div class="row tags_members_wrap">
+    <div class="col-8">  
+      {% include 'components/navigation_of_answers.html'%}
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+        <div class="row question">     
+          {% include 'components/question.html' %}
+        </div>
+        <hr class="border-secondary-subtle border-3 opacity-75">  
+        <div class="four"><h1>Answers</h1></div>
+        {% for answer in question.answer_set.all%}
+        <div class="row question">  
+          {% include 'components/answer.html' %}
+        </div> 
+        {% endfor %}
       </div>
-      <div class="col-sm-9" >
-        <button class="btn-lg ask_btn" >
-          Answer
-      </button>
+        <div class="mb-5 row mt-3">
+          <label for="input" class="col-sm-2 col-form-label"><h3>Text</h3></label>
+          <div class="col-sm-9">
+          <textarea name="area" placeholder="Write text for you answer" rows="8" class="text-bg-light form-control form-control-lg border-2 border-black"></textarea>
+          </div>     
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+          </div>
+          <div class="col-sm-9" >
+            <button class="btn-lg ask_btn" >
+              Answer
+          </button>
+          </div>
+
+        </div>
       </div>
-
-    </div>
-  </div>
-
+<script>
+  document.getElementById('question_text').style="height: 100%"
+</script>
 {% endblock %}
  

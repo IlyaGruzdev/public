@@ -1,4 +1,5 @@
 from django.db import models
+from django.db import connection, connections
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator
 from django.http.request import HttpRequest
@@ -10,6 +11,17 @@ def get_upload_path(instance, filename):
     current_date = datetime.now().strftime("%Y-%m-%d")
     return os.path.join("uploads", current_date, filename)
 
+class QuestionManeger(models.Manager):
+  def bestQuestions(self, count):
+    return self.raw('''select * from "askmeApp_question" as a where a.id in 
+  (select i.question_id from "askmeApp_instancetype" as i
+  inner join "askmeApp_like_like_type" as l on i.id=l.instancetype_id
+  inner join "askmeApp_repost_repost_type" as r on i.id=r.instancetype_id where i.type=0
+  group by question_id order by count(question_id) desc limit %s)''', (count, ))
+
+  def newQuestions(self, count):
+    return self.order_by('-public_date')[:count]
+
 class Tag(models.Model):
   name=models.CharField(unique=True,max_length=255)
 
@@ -19,6 +31,7 @@ class Question(models.Model):
   public_date=models.DateTimeField(auto_now=True)
   tags=models.ManyToManyField('Tag', related_name='questions')
   user=models.ForeignKey('Profile',null=True, blank=True, on_delete=models.SET_NULL)
+  objects=QuestionManeger()
  
 class Answer(models.Model):
   title=models.CharField(max_length=255)

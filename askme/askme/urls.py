@@ -24,13 +24,14 @@ from askmeApp import views
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', views.index, name="home"),
-    path('signup/', views.register, name="register"),
+    path('signup/', views.register, name="register"),         
     path('login/', views.login, name="login"),
     path('ask/', views.ask, name="ask"),
     path('question/<int:question_id>/', views.question, name="question"),
     re_path(r'tag/(?P<name>[\w+ ./-]+)/', views.tag_questions, name="tag_questions"),
     path('settings/', views.settings, name='settings'),
-    path('hot/', views.bestQuestions, name='hot')
+    path('hot/', views.bestQuestions, name='hot'),
+    path('new/', views.newQuestions, name='new')
 ]
 
 handler404 = views.pageNotFound

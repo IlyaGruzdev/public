@@ -10,10 +10,9 @@
 {
   font-size: medium;
   background-color: white;
-  height: 100%;
-  padding-top: 15px;
-  border-style:groove;
-  border-width: 5px;
+  padding: 15px;
+  /* border-width: 5px; */
+
 }
 .question_title
 {
@@ -37,7 +36,20 @@
 }
 .question_title_text_wrap
 {
-  overflow: scroll; 
-  height: 100%;
- 
+  overflow:scroll; 
+  
+}
+#question_title_text_wrap::-webkit-scrollbar {
+  width: 10px;
+}
+
+#question_title_text_wrap::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f9f9fd;
+  border-radius: 10px;
+}
+
+#question_title_text_wrap::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(180deg, #00c6fb, #005bea);
 }

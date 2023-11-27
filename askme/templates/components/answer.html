@@ -1,5 +1,5 @@
 {% load static %}
-
+<div class="row" style="display:flex">
 <div class="col-3">
   {% with user=answer.user%}
   <h4 id="scrollspyHeading1"> {{user.profile_user.first_name}} </h4>
@@ -9,7 +9,11 @@
         <a class="position-relative" >
           <img src="{%static '/img/like.png' %}" width="30px" height="30px">
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            6
+            {% if answer.answerInstance.likes.count %}
+            {{answer.answerInstance.likes.count}}
+            {% else %}
+            0
+            {% endif %}
             <span class="visually-hidden"></span>
           </span>
         </a>
@@ -20,7 +24,11 @@
       <a class="position-relative" >
         <img src="{% static '/img/repost.png' %}" width="30px" height="30px">
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          2
+          {% if answer.answerInstance.Reposts.count %}
+          {{answer.answerInstance.Reposts.count}}
+          {% else %}
+          0
+          {% endif %}
           <span class="visually-hidden"></span>
         </span>
       </a>
@@ -43,10 +51,10 @@
    
   <div class="row" style="height:100%; overflow:hidden">
     <div  class ="row" style="display:flex;">
-      <div class="answer_title col-8">
+      <div class="answer_title col-9">
         <h1 id="answer{{answer.id}}">{{answer.title}}</h1>
       </div>
-      <div class="col-4">
+      <div class="col-3">
       <div class="row" >
         <div class="col-3">
         </div>
@@ -65,7 +73,12 @@
       </div>
     </div>
   </div>
-  
+</div>
+<div class="col-2">
+  <div class="d-flex justify-content-end">
+   <h5> <p>{{answer.public_date|date}}</p></h5>
+  </div>
+</div>
 </div>
 
 

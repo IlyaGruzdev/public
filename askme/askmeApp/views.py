@@ -2,8 +2,8 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 from django.template import loader
 from django.core.paginator import Paginator
-from .models import Profile, Question, Answer, Tag
-
+from .models import Profile, Question, Answer, Tag, InstanceType, QuestionManeger
+from django.db.models import *
 
 def paginate(objects, request, count=5):
   page=int(request.GET.get('page',1))
@@ -48,7 +48,15 @@ def settings(request):
 
 
 def bestQuestions(request):
-  return render (request, 'bestQuestions.html')
+  questions=Question.objects.bestQuestions(20)
+  page_object=paginate(questions,request, 20)
+  return render (request, 'bestQuestions.html', context={'questions': page_object})
+
+def newQuestions(request):
+  questions=Question.objects.newQuestions(20)
+  page_object=paginate(questions,request, 20)
+  return render (request, 'bestQuestions.html', context={'questions': page_object})
+
 
 def pageNotFound(request, exception):
   template = loader.get_template('notFound.html')

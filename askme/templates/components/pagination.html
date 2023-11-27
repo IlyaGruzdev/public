@@ -1,6 +1,7 @@
 <nav aria-label="Page navigation example" style="margin-top: 15px;">
   <ul class="pagination">
     <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+    {% if questions.paginator.num_pages != 1%}
     {% if questions.has_previous and questions.previous_page_number != 1 and questions.number != 1 %}
     <li class="page-item"><a class="page-link" href="?page={{questions.number|add:"-1"}}">previous</a></li>
     {% endif %}
@@ -12,5 +13,6 @@
     {% endif %}
     <li class="page-item"><a class="page-link" href="?page={{questions.number}}">...</a></li>
     <li class="page-item"><a class="page-link" href="?page={{questions.paginator.num_pages}}">{{questions.paginator.num_pages}}</a></li>
+    {% endif %}
   </ul>
 </nav>

@@ -88,3 +88,15 @@ body {
   margin-left: 44vw;
  margin-top: 42vh;
 }
+
+.hot_questions
+{
+  margin-top: 30px;
+  text-transform:capitalize;
+  font-size: 3pc
+}
+.hot_questions:hover
+{
+  text-decoration: none;
+  color: #800080;
+}

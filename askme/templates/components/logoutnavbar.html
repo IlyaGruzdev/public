@@ -3,7 +3,7 @@
 <nav class="navbar  navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="{%static 'img/site_icon.png'%}" width="50px" height="50px" alt=""></a>
-    <a class="navbar-brand" href="{% url 'hot' %}">Hot questions</a>
+    <a class="navbar-brand" href="{%url 'hot'%}">Hot questions</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,48 +28,32 @@
           <a class="nav-link active" aria-current="page" href="{% url 'new' %}">New Questions</a>
         </li>
       </ul>
-     
+      <div class="d-flex bd-highlight">
       <form class="d-flex nav-btn" role="search">
 
         <a href="{% url 'ask' %}" class="nav-link"><button type="button" class="btn btn-info">
           Ask
         </button>
-        </a>     
-      
+        </a>      
         <input class="form-control me-2 nav-btn" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success nav-btn" type="submit">Search</button>
       </form>
     </div>
-   
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-    <a href="#"><img class="nav-link base_avatar nav-btn" src="{%static '/img/unnamed.png'%}"></a>
-    <div class="conteiner">
-      <div class="row">
-        <div class="col-10">
-          <div class="row">
-            <li class="nav-item" style="margin-left: 10px;">
-              <a class="navbar-brand"  aria-current="page" href="#">User</a>
-            </li>  
-            <div class="row">
+    </div>
 
-              <div class="col-6">
+    <ul class="navbar-nav" style="--bs-scroll-height: 100px;">
+          <div class="d-flex justify-content-start">    
+              <div>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'settings' %}">Settings</a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'login'%}">Log in</a>
                 </li>    
               </div> 
-              <div class="col-6">
+              <div>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Log out</a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'register'%}">Register</a>
                 </li>    
-              </div> 
-            </div> 
-           
+              </div>    
           </div>
-         
-        </div>  
-        
-  </div>
-  </div>
-      </ul>   
+    </ul>   
   </div>
 </nav>
