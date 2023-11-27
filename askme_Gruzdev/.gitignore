@@ -15,3 +15,6 @@ media
 .cache 
 .pytest_cache/ 
 db.sqlite3
+.gitignore.swp
+.vscode
+__pycache__
